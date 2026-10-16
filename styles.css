@@ -1,0 +1,257 @@
+:root {
+  --page-bg: #121315;
+  --card-bg: #1c1d20;
+  --text: #f2f2f2;
+  --muted: #8a8e96;
+  --filter-active: #4b5161;
+  --price-bg: #b9e6d0;
+  --price-text: #1d2b23;
+  --popular: #f6c768;
+  --sold-out: #ec6b57;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background-color: var(--page-bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+}
+
+/* Hero banner */
+.hero {
+  height: 260px;
+  background: url("resources/bg-cafe-lg.jpg") center / cover no-repeat;
+}
+
+/* Main card, overlapping the hero */
+.collection-card {
+  position: relative;
+  width: min(952px, calc(100% - 80px));
+  margin: -120px auto 0;
+  padding: 72px 108px;
+  background-color: var(--card-bg);
+  border-radius: 16px;
+}
+
+/* Intro */
+.intro {
+  position: relative;
+  text-align: center;
+}
+
+.swirl {
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 80px);
+  width: 257px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.intro h1 {
+  position: relative;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.intro p {
+  position: relative;
+  max-width: 430px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 36px 0 48px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filter-btn:hover {
+  background-color: rgba(75, 81, 97, 0.5);
+}
+
+.filter-btn.is-active,
+.filter-btn.is-active:hover {
+  background-color: var(--filter-active);
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid var(--muted);
+  outline-offset: 2px;
+}
+
+/* Product grid */
+.product-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px 28px;
+}
+
+.product[hidden] {
+  display: none;
+}
+
+.product-image {
+  position: relative;
+  aspect-ratio: 1.62 / 1;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 2px 10px;
+  border-radius: 6px;
+  background-color: var(--popular);
+  color: #1c1c1c;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.product-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.product-head h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.price {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: var(--price-bg);
+  color: var(--price-text);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.rating img {
+  width: 18px;
+  height: 18px;
+}
+
+.rating strong {
+  font-weight: 600;
+}
+
+.votes {
+  color: var(--muted);
+}
+
+.rating.none .votes {
+  font-weight: 600;
+}
+
+.sold-out {
+  margin-left: auto;
+  color: var(--sold-out);
+  font-weight: 600;
+}
+
+/* Footer */
+.author-info {
+  padding: 24px 16px;
+  font-size: 14px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.author-info a {
+  color: inherit;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .hero {
+    height: 300px;
+    background-image: url("resources/bg-cafe.jpg");
+  }
+
+  .collection-card {
+    margin-top: -140px;
+    padding: 56px 48px;
+  }
+
+  .product-grid {
+    gap: 36px 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .hero {
+    height: 240px;
+    background-image: url("resources/bg-cafe-sm.jpg");
+  }
+
+  .collection-card {
+    width: calc(100% - 32px);
+    margin-top: -180px;
+    padding: 44px 44px 56px;
+  }
+
+  .intro h1 {
+    font-size: 28px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

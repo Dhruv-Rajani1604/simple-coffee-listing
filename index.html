@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="resources/favicon.ico" type="image/x-icon" sizes="96x96" />
+    <title>Simple Coffee Listing | devChallenges.io</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <header class="hero" aria-hidden="true"></header>
+
+    <main class="collection-card">
+      <section class="intro">
+        <img class="swirl" src="resources/vector.svg" alt="" aria-hidden="true" />
+        <h1>Our Collection</h1>
+        <p>
+          Introducing our Coffee Collection, a selection of unique coffees from
+          different roast types and origins, expertly roasted in small batches
+          and shipped fresh weekly.
+        </p>
+      </section>
+
+      <div class="filters" role="group" aria-label="Filter products">
+        <button class="filter-btn is-active" data-filter="all" aria-pressed="true">
+          All Products
+        </button>
+        <button class="filter-btn" data-filter="available" aria-pressed="false">
+          Available Now
+        </button>
+      </div>
+
+      <ul class="product-grid">
+        <li class="product" data-available="true">
+          <div class="product-image" style="background-color: #cfd0d2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnTrfrqtkA9xBLYRAJMKdsD44xIFIcZDHn4Iy4y9by-Q&s=10" alt="Cappuccino with latte art" loading="lazy" onerror="this.remove()" />
+            <span class="badge">Popular</span>
+          </div>
+          <div class="product-head">
+            <h2>Cappuccino</h2>
+            <span class="price">$5.20</span>
+          </div>
+          <div class="rating">
+            <img src="https://cdn-icons-png.flaticon.com/128/18094/18094455.png" alt="" />
+            <strong>4.7</strong><span class="votes">(65 votes)</span>
+          </div>
+        </li>
+
+        <li class="product" data-available="true">
+          <div class="product-image" style="background-color: #cde6e6">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbYQKwA9CPPMI5H-bw5xV5tkqazqkhEOT1PoDrZiUZw&s=10" alt="House coffee in a teal-rimmed cup" loading="lazy" onerror="this.remove()" />
+            <span class="badge">Popular</span>
+          </div>
+          <div class="product-head">
+            <h2>House Coffee</h2>
+            <span class="price">$3.50</span>
+          </div>
+          <div class="rating">
+            <img src="https://cdn-icons-png.flaticon.com/128/18094/18094455.png" alt="" />
+            <strong>4.85</strong><span class="votes">(14 votes)</span>
+          </div>
+        </li>
+
+        <li class="product" data-available="true">
+          <div class="product-image" style="background-color: #2c2119">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5bew1m-TWnznqHt_fSI8Snnsm2ef_wEY9SwOaem3iqw&s=10" alt="Espresso in a white cup" loading="lazy" onerror="this.remove()" />
+          </div>
+          <div class="product-head">
+            <h2>Espresso</h2>
+            <span class="price">$2.50</span>
+          </div>
+          <div class="rating">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5bew1m-TWnznqHt_fSI8Snnsm2ef_wEY9SwOaem3iqw&s=10" alt="" />
+            <strong>4.9</strong><span class="votes">(55 votes)</span>
+          </div>
+        </li>
+
+        <li class="product" data-available="true">
+          <div class="product-image" style="background-color: #eeeeee">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhV3eB2H2DPP9qpWdZnC1E-hlFwJnNf4wwNifLOb7LrQ&s=10" alt="Coffee latte in a white mug" loading="lazy" onerror="this.remove()" />
+          </div>
+          <div class="product-head">
+            <h2>Coffee Latte</h2>
+            <span class="price">$4.50</span>
+          </div>
+          <div class="rating">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5bew1m-TWnznqHt_fSI8Snnsm2ef_wEY9SwOaem3iqw&s=10" alt="" />
+            <strong>5.0</strong><span class="votes">(23 votes)</span>
+          </div>
+        </li>
+
+        <li class="product" data-available="false">
+          <div class="product-image" style="background-color: #e6d5bd">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAwCLip-BjhwJkMmUNXkF71VEqHAEgbPfVI6ZBrzULrQ&s=10" alt="Chocolate coffee seen from above" loading="lazy" onerror="this.remove()" />
+          </div>
+          <div class="product-head">
+            <h2>Chocolate Coffee</h2>
+            <span class="price">$4.00</span>
+          </div>
+          <div class="rating">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5bew1m-TWnznqHt_fSI8Snnsm2ef_wEY9SwOaem3iqw&s=10" alt="" />
+            <strong>4.65</strong><span class="votes">(122 votes)</span>
+            <span class="sold-out">Sold out</span>
+          </div>
+        </li>
+
+        <li class="product" data-available="true">
+          <div class="product-image" style="background-color: #f2c2c4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEw9Wd1QY3mDo6vnrmd5CVP15SLzintamGWAOUgxnBbQ&s=10" alt="Valentine special pink drink on a saucer" loading="lazy" onerror="this.remove()" />
+          </div>
+          <div class="product-head">
+            <h2>Valentine Special</h2>
+            <span class="price">$5.50</span>
+          </div>
+          <div class="rating none">
+           <img src="https://cdn-icons-png.flaticon.com/128/3384/3384508.png" alt="rating" />
+            <span class="votes">No ratings</span>
+          </div>
+        </li>
+      </ul>
+    </main>
+
+    <footer class="author-info">
+      Coded by <a href="#">Dhruv Rajani</a> | Challenge by
+      <a href="https://www.devchallenges.io?ref=challenge" target="_blank" rel="noopener">devChallenges.io</a>.
+    </footer>
+
+    <script>
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const products = document.querySelectorAll('.product');
+
+      filterButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const filter = button.dataset.filter;
+
+          filterButtons.forEach((btn) => {
+            const active = btn === button;
+            btn.classList.toggle('is-active', active);
+            btn.setAttribute('aria-pressed', String(active));
+          });
+
+          products.forEach((product) => {
+            product.hidden = filter === 'available' && product.dataset.available !== 'true';
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
