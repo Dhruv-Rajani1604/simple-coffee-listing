@@ -18,8 +18,13 @@
   box-sizing: border-box;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   min-height: 100vh;
+  overflow-x: hidden;
   font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   background-color: var(--page-bg);
   color: var(--text);
@@ -28,9 +33,10 @@ body {
 
 img {
   display: block;
+  max-width: 100%;
 }
 
-/* Hero banner */
+/* Hero banner (desktop default) */
 .hero {
   height: 260px;
   background: url("resources/bg-cafe-lg.jpg") center / cover no-repeat;
@@ -55,10 +61,13 @@ img {
 .swirl {
   position: absolute;
   top: -40px;
-  left: calc(50% - 80px);
-  width: 257px;
+  left: 50%;
+  transform: translateX(-30%);
+  width: clamp(160px, 45%, 257px);
+  height: auto;
   opacity: 0.6;
   pointer-events: none;
+  color: brown;
 }
 
 .intro h1 {
@@ -81,12 +90,14 @@ img {
 /* Filters */
 .filters {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
   margin: 36px 0 48px;
 }
 
 .filter-btn {
+  min-height: 44px;
   padding: 8px 16px;
   border: none;
   border-radius: 6px;
@@ -113,11 +124,11 @@ img {
   outline-offset: 2px;
 }
 
-/* Product grid */
+/* Product grid: columns adapt to the space available */
 .product-grid {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 36px 28px;
 }
 
@@ -161,6 +172,8 @@ img {
 .product-head h2 {
   font-size: 16px;
   font-weight: 600;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .price {
@@ -175,6 +188,7 @@ img {
 
 .rating {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 6px;
   margin-top: 8px;
@@ -216,7 +230,7 @@ img {
   color: inherit;
 }
 
-/* Tablet */
+/* Tablet and small laptops */
 @media (max-width: 1023px) {
   .hero {
     height: 300px;
@@ -224,8 +238,9 @@ img {
   }
 
   .collection-card {
+    width: calc(100% - 48px);
     margin-top: -140px;
-    padding: 56px 48px;
+    padding: 56px 40px;
   }
 
   .product-grid {
@@ -233,25 +248,43 @@ img {
   }
 }
 
-/* Mobile */
+/* Phones */
 @media (max-width: 640px) {
   .hero {
     height: 240px;
-    background-image: url("resources/bg-cafe-sm.jpg");
+    background-image: url("resources/bg-cafe.jpg");
   }
 
   .collection-card {
     width: calc(100% - 32px);
     margin-top: -180px;
-    padding: 44px 44px 56px;
+    padding: 44px 32px 48px;
   }
 
   .intro h1 {
     font-size: 28px;
   }
 
+  .intro p {
+    font-size: 15px;
+  }
+
+  .filters {
+    margin: 28px 0 36px;
+  }
+
   .product-grid {
-    grid-template-columns: 1fr;
     gap: 28px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .collection-card {
+    padding: 36px 20px 40px;
+  }
+
+  .filter-btn {
+    padding: 8px 12px;
   }
 }
